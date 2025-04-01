@@ -1,10 +1,10 @@
+import { AuthQueryProvider } from "@daveyplate/better-auth-tanstack"
 import { AuthUIProviderTanstack } from "@daveyplate/better-auth-ui/tanstack"
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query"
 import { Link, useRouter } from "@tanstack/react-router"
 import { ThemeProvider } from "next-themes"
 import type { ReactNode } from "react"
-
-import { AuthQueryProvider } from "@daveyplate/better-auth-tanstack"
-import { QueryClient, QueryClientProvider } from "@tanstack/react-query"
+import { Toaster } from "sonner"
 
 import { authClient } from "@/lib/auth-client"
 
@@ -40,6 +40,8 @@ export function Providers({ children }: { children: ReactNode }) {
                         Link={({ href, to, ...props }) => <Link to={href} {...props} />}
                     >
                         {children}
+
+                        <Toaster />
                     </AuthUIProviderTanstack>
                 </ThemeProvider>
             </AuthQueryProvider>
