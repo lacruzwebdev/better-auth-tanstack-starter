@@ -37,7 +37,7 @@ export function Providers({ children }: { children: ReactNode }) {
                         authClient={authClient}
                         navigate={(href) => router.navigate({ href })}
                         replace={(href) => router.navigate({ href, replace: true })}
-                        Link={({ href, to, ...props }) => <Link to={href} {...props} />}
+                        Link={({ href, ...props }) => <Link to={href} {...props} />}
                     >
                         {children}
 
